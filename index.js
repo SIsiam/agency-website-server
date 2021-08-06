@@ -20,11 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/', (req, res) => {
-  res.send({
-    status: 200,
-    message: 'Photography Server is Ok '
-  })
-
+  res.send(`<h1> Agency Website Server Side</h1>`)
 })
 
 
@@ -34,7 +30,7 @@ console.log(uri);
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
 
-  console.log('mongo Mama error kaise re: ', err);
+  console.log('mongo error check: ', err);
 
 
   const servicesCollection = client.db("ServicesList").collection("service");
